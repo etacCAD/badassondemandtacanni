@@ -2,7 +2,7 @@
 
 Single-page event site for **Badass On Demand**, a live event on **Fri, Nov 20, 2026** for senior leaders, owners and founders. Free **Open Office Hours** (Tue, Nov 17, then every other Tuesday) is the warm-up that feeds it.
 
-This is a **review draft**: a banner on every view says so, forms do not submit, and the page is set to `noindex`.
+Status: pre-launch. Forms do not submit yet, Nov 20 details show as TBC, and the page is set to `noindex`.
 
 ## What's on the page
 
@@ -31,5 +31,9 @@ Then open http://localhost:8080.
 
 - Confirm Nov 20 time, location, price and seat cap (shown as TBC)
 - Confirm the Office Hours day, time and cap, and the proposed attendee bonus
-- Replace the review banner, remove `noindex` and `robots.txt`, and wire the forms to Kartra
-- Add 3 testimonials from senior leaders, a headshot and the host reel link
+- Remove `noindex` and `robots.txt`, and wire both forms to Kartra (tag by audience; keep the "Who invited you?" field)
+- Add 3 testimonials from senior leaders (a founder, a franchisor, a family office); current reviews are excerpts from bigimpacthq.com
+- Add a headshot, the host reel link, a booking link for B2B briefings and the Zoom details
+- Confirm Mark's bio lines (from bigimpacthq.com) and the "rooms of 200+" claim
+- Review the 15 assessment statements, scoring bands and advice
+- Link to this page from bigimpacthq.com and Mark's LinkedIn (this page links back in the footer)

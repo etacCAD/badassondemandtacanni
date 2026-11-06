@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
-<meta name="description" content="Badass On Demand, a live event on Fri, Nov 20 for senior leaders, owners and founders. Concept draft for review.">
+<meta name="description" content="Badass On Demand, a live event on Fri, Nov 20 for senior leaders, owners and founders.">
 <meta property="og:title" content="Badass On Demand · Fri, Nov 20">
-<meta property="og:description" content="A live event for senior leaders, owners and founders. Concept draft for review.">
+<meta property="og:description" content="A live event for senior leaders, owners and founders.">
 <meta property="og:type" content="website">
-<title>Badass On Demand Concept Site</title>
+<title>Badass On Demand · Fri, Nov 20</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -64,17 +64,6 @@ p{margin:0;max-width:64ch}
 .btns{display:flex;flex-wrap:wrap;gap:12px}
 .chip{display:inline-block;font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid currentColor}
 
-/* Review banner */
-.review{position:sticky;top:env(safe-area-inset-top, 0px);z-index:30;background:var(--brass);color:var(--ink);font-size:14px}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:40;background:var(--brass)}
-.review .wrap{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:space-between;padding-block:8px}
-.review b{font-weight:700}
-.review details{font-size:14px}
-.review summary{cursor:pointer;font-weight:700;text-decoration:underline;list-style:none}
-.review summary::-webkit-details-marker{display:none}
-.review .notes{position:absolute;left:0;right:0;top:100%;background:var(--white);color:var(--text);border-bottom:3px solid var(--brass);box-shadow:0 18px 40px rgba(13,24,40,.25);max-height:70vh;overflow:auto}
-.review .notes .wrap{display:block;padding-block:20px 24px}
-.review .notes ol{margin:8px 0 0;padding-left:22px;display:grid;gap:8px;max-width:90ch}
 
 /* Nav */
 header.top{background:var(--ink);color:var(--on-ink);border-bottom:1px solid var(--line-dark)}
@@ -254,30 +243,6 @@ footer a{color:var(--on-ink-muted)}
 <style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body>
-<div class="review" role="note">
-  <div class="wrap">
-    <span><b>Concept draft for review.</b> Prepared by Evan Hopkins (TACANNI) for Mark Grainger. Not the live site.</span>
-    <details>
-      <summary>Reviewer notes (10)</summary>
-      <div class="notes"><div class="wrap">
-        <b>What to react to</b>
-        <ol>
-          <li><b>Focus: Badass On Demand, Fri Nov 20.</b> Every main button points at it. Free Office Hours on Tue Nov 17 is the warm-up that feeds it. The Office Hours schedule is a placeholder (every other Tuesday, 12:00–1:00 pm CT); confirm the day, time and seat cap.</li>
-          <li><b>After Nov 20</b> the site falls back on its own to Office Hours as the only date, so nothing goes stale.</li>
-          <li><b>Reviews are excerpts from bigimpacthq.com.</b> badassondemand.com couldn't be loaded. They're about speaking and business revenue, mostly from women speakers. Get 3 testimonials from senior leaders or owners before launch, ideally a franchisor, a family office and a founder.</li>
-          <li><b>The name.</b> "Badass" plays well with founders and may slow down family offices and franchisors. The plain subtitle carries the promise; consider a quieter name on B2B one-sheets.</li>
-          <li><b>Assessment and calculator work.</b> The 15 statements, scoring bands and "first move" advice are drafts for Mark to edit.</li>
-          <li><b>Calculator figures</b> use Gallup's replacement-cost range (0.5–2× salary). Everything else is the visitor's own input.</li>
-          <li><b>Forms don't submit.</b> On the live site they'd go to Kartra, tagged by audience, with "Who invited you?" for referral tracking.</li>
-          <li><b>Nov 20 details are placeholders.</b> Time, location, price and seat cap show as TBC. The Office Hours bonus (first pick of the live hot seats) is proposed and needs Mark's OK.</li>
-          <li><b>Mark's bio lines</b> are taken from bigimpacthq.com. "Rooms of 200+" comes from Mark's message about the Big Impact Event. Confirm both.</li>
-          <li><b>Still needed:</b> a headshot, the host reel link, a booking link for B2B briefings, the Zoom details, and links to this event page from bigimpacthq.com and Mark's LinkedIn (this page already links back).</li>
-        </ol>
-      </div></div>
-    </details>
-  </div>
-</div>
-
 <header class="top">
   <div class="wrap">
     <a class="mark" href="#top">Badass <span>On Demand</span></a>
@@ -550,7 +515,7 @@ footer a{color:var(--on-ink-muted)}
       <label for="e-role">I lead…<select id="e-role" name="role"><option>My own company</option><option>As a senior executive</option><option>A franchise system or franchise unit</option><option>A family office or portfolio company</option><option>An incubator or accelerator</option><option>Conferences and events</option></select></label>
       <label for="e-ref">Who invited you?<input id="e-ref" name="referrer" placeholder="Name, if someone sent you"></label>
       <button class="btn" type="submit" style="justify-content:center">Claim my seat for Nov 20</button>
-      <p class="note" id="ev-note" hidden>This is a concept draft, so nothing was sent. On the live site this goes to Kartra checkout.</p>
+      <p class="note" id="ev-note" hidden>Online registration isn’t connected yet, so nothing was sent.</p>
       <p class="muted" style="font-size:14px" data-warmup>Not ready? <a href="#office-hours">Start at free Office Hours on <span data-next="date-inline">Tue, Nov 17</span></a>.</p>
     </form>
   </div>
@@ -581,7 +546,7 @@ footer a{color:var(--on-ink-muted)}
       <label for="f-q">Your challenge (optional)<textarea id="f-q" name="challenge" placeholder="One sentence is enough."></textarea></label>
       <label for="f-ref">Who invited you?<input id="f-ref" name="referrer" placeholder="Name, if someone sent you"></label>
       <button class="btn" type="submit" style="justify-content:center">Save my seat · free</button>
-      <p class="note" id="reg-note" hidden>This is a concept draft, so nothing was sent. On the live site this registers you in Kartra and sends the Zoom link.</p>
+      <p class="note" id="reg-note" hidden>Online registration isn’t connected yet, so nothing was sent.</p>
     </form>
   </div>
 </section>
