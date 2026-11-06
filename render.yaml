@@ -1,0 +1,11 @@
+# Render Blueprint: static site served straight from the repo root.
+services:
+  - type: web
+    name: badass-on-demand-event
+    runtime: static
+    buildCommand: ""
+    staticPublishPath: .
+    headers:
+      - path: /*
+        name: X-Robots-Tag
+        value: noindex, nofollow

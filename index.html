@@ -1,0 +1,780 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Badass On Demand, a live event on Fri, Nov 20 for senior leaders, owners and founders. Concept draft for review.">
+<meta property="og:title" content="Badass On Demand · Fri, Nov 20">
+<meta property="og:description" content="A live event for senior leaders, owners and founders. Concept draft for review.">
+<meta property="og:type" content="website">
+<title>Badass On Demand Concept Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Barlow:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one committed look in the BigImpactHQ palette (navy + gold + sand), alternating navy "stage" bands and sand "working" bands; tools sit in the light bands. */
+:root{
+  --ink:#1B2F5A; --ink-2:#16284D; --ink-3:#2A4475;
+  --paper:#F7F2ED; --white:#FFFFFF; --line:#E4D8CB; --line-dark:#34507F;
+  --text:#1B2F5A; --body-text:#48484A; --text-muted:#5C5C60; --on-ink:#F7F2ED; --on-ink-muted:#C3CBDC;
+  --brass:#CA9A50; --brass-deep:#8A6326; --brass-soft:#F2E7DD;
+  --good:#2E8A5C; --mid:#C9A24B; --low:#C2563A;
+  --display:"Barlow Condensed","Arial Narrow",Impact,sans-serif;
+  --body:"Barlow",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --r:12px;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--paper);color:var(--text);font-family:var(--body);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brass);outline-offset:2px}
+.wrap{max-width:1140px;margin:0 auto;padding-left:max(20px, env(safe-area-inset-left, 0px));padding-right:max(20px, env(safe-area-inset-right, 0px))}
+.band{padding-block:88px}
+.band.dark{background:var(--ink);color:var(--on-ink)}
+.band.dark2{background:var(--ink-2);color:var(--on-ink)}
+.band.light{background:var(--paper);color:var(--body-text)}
+.band.white{background:var(--white);color:var(--body-text)}
+.band.light h2,.band.light h3,.band.white h2,.band.white h3,.dim h3{color:var(--ink)}
+.dark h2,.dark2 h2{color:var(--brass-soft)}
+.eyebrow{font-family:var(--mono);font-size:12.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--brass-deep)}
+.dark .eyebrow,.dark2 .eyebrow{color:var(--brass)}
+h1,h2,h3{font-family:var(--display);text-transform:uppercase;margin:0;text-wrap:balance;letter-spacing:.005em}
+h1{font-weight:800;font-size:clamp(46px,7.4vw,92px);line-height:.9}
+h2{font-weight:800;font-size:clamp(36px,5vw,58px);line-height:.95}
+h3{font-weight:700;font-size:24px;line-height:1.05}
+p{margin:0;max-width:64ch}
+.lede{font-size:20px;line-height:1.5}
+.muted{color:var(--text-muted)}
+.dark .muted,.dark2 .muted{color:var(--on-ink-muted)}
+.stack{display:grid;gap:18px;align-content:start}
+.stack-lg{display:grid;gap:40px}
+.btn{display:inline-flex;align-items:center;gap:8px;font:700 16px var(--body);letter-spacing:.02em;padding:14px 22px;border-radius:999px;text-decoration:none;cursor:pointer;border:2px solid var(--brass);background:var(--brass);color:var(--ink);transition:transform .15s ease, background .15s}
+.btn:hover{transform:translateY(-1px);background:#D8B460}
+.btn.ghost{background:transparent;color:inherit;border-color:currentColor}
+.btn.ghost:hover{background:rgba(202,154,80,.14)}
+.band.light .btn:not(.ghost),.band.white .btn:not(.ghost),form.reg .btn{background:var(--ink);border-color:var(--ink);color:var(--brass)}
+.band.light .btn:not(.ghost):hover,.band.white .btn:not(.ghost):hover,form.reg .btn:hover{background:#24407A}
+.band.light .btn.ghost,.band.white .btn.ghost{color:var(--ink)}
+.band .result .btn:not(.ghost),.band .calc .out .btn{background:var(--brass);border-color:var(--brass);color:var(--ink)}
+.band .result .btn:not(.ghost):hover,.band .calc .out .btn:hover{background:#D8B06A}
+.band .result .btn.ghost{color:var(--on-ink)}
+.result .eyebrow,.calc .out .eyebrow{color:var(--brass)}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.chip{display:inline-block;font:500 12px var(--mono);letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:999px;border:1px solid currentColor}
+
+/* Review banner */
+.review{position:sticky;top:env(safe-area-inset-top, 0px);z-index:30;background:var(--brass);color:var(--ink);font-size:14px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top, 0px);z-index:40;background:var(--brass)}
+.review .wrap{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;justify-content:space-between;padding-block:8px}
+.review b{font-weight:700}
+.review details{font-size:14px}
+.review summary{cursor:pointer;font-weight:700;text-decoration:underline;list-style:none}
+.review summary::-webkit-details-marker{display:none}
+.review .notes{position:absolute;left:0;right:0;top:100%;background:var(--white);color:var(--text);border-bottom:3px solid var(--brass);box-shadow:0 18px 40px rgba(13,24,40,.25);max-height:70vh;overflow:auto}
+.review .notes .wrap{display:block;padding-block:20px 24px}
+.review .notes ol{margin:8px 0 0;padding-left:22px;display:grid;gap:8px;max-width:90ch}
+
+/* Nav */
+header.top{background:var(--ink);color:var(--on-ink);border-bottom:1px solid var(--line-dark)}
+header.top .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;padding-block:16px;flex-wrap:wrap}
+.mark{font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:.02em;text-transform:uppercase;text-decoration:none;line-height:1}
+.mark span{color:var(--brass)}
+nav.links{display:flex;gap:6px 22px;flex-wrap:wrap;font-weight:600;font-size:15px}
+nav.links a{text-decoration:none;color:var(--on-ink-muted)}
+nav.links a:hover{color:var(--on-ink)}
+header.top .btn{padding:10px 18px;font-size:15px}
+
+/* Hero */
+.hero .wrap{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:48px;align-items:center}
+.hero h1 em{font-style:normal;color:var(--brass)}
+.oh-card{background:var(--ink-2);border:1px solid var(--line-dark);border-radius:var(--r);padding:26px;display:grid;gap:16px;box-shadow:0 24px 60px rgba(0,0,0,.35)}
+.oh-card .when{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:44px;line-height:.95;color:var(--white)}
+.oh-card .time{font-family:var(--mono);font-size:14px;color:var(--brass)}
+.oh-card ul{margin:0;padding:0;list-style:none;display:grid;gap:8px;font-size:15.5px;color:var(--on-ink-muted)}
+.oh-card li{display:flex;gap:10px}
+.oh-card li::before{content:"";flex:0 0 8px;height:8px;margin-top:9px;border-radius:2px;background:var(--brass)}
+.oh-card .btn{justify-content:center}
+.tbc{display:inline-block;font:500 11px var(--mono);letter-spacing:.06em;background:var(--brass-soft);color:var(--brass-deep);padding:2px 6px;border-radius:4px;vertical-align:1px}
+.oh-card .warmup{font-size:14.5px;color:var(--on-ink-muted);text-align:center;text-underline-offset:3px}
+.oh-card .warmup:hover{color:var(--on-ink)}
+.bonus{margin:0;border-left:3px solid var(--brass);padding:6px 14px;color:var(--brass-soft);font-weight:600}
+form.reg a{color:var(--ink)}
+.oh-card .card-lede{font-size:15.5px;color:var(--on-ink);margin:0}
+.oh-card .card-foot{font:500 12.5px var(--mono);letter-spacing:.06em;text-transform:uppercase;color:var(--on-ink-muted);margin:0}
+.qualify{border:1px solid var(--line-dark);border-radius:var(--r);padding:20px 22px;display:grid;gap:14px;background:var(--ink-2)}
+.qualify h3{color:var(--brass-soft);font-size:23px}
+.qualify ul{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.qualify li{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;font-size:16px;line-height:1.45}
+.qualify li::before{content:"\2713";color:var(--brass);font-weight:700}
+.qualify .sting{font-weight:600;color:var(--brass);font-size:16.5px;line-height:1.45}
+.ways{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);border-radius:var(--r);overflow:hidden;margin-top:56px}
+.ways a{background:var(--ink);padding:22px 22px 24px;text-decoration:none;display:grid;gap:6px}
+.ways a:hover{background:var(--ink-2)}
+.ways .n{font-family:var(--mono);font-size:12px;color:var(--brass);letter-spacing:.1em}
+.ways b{font-family:var(--display);text-transform:uppercase;font-size:26px;line-height:1}
+.ways small{color:var(--on-ink-muted);font-size:15px}
+
+/* Problem */
+.problem .grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.problem .item{border-top:3px solid var(--ink);padding-top:16px;display:grid;gap:10px;align-content:start}
+.problem .item .cost{font-size:15px;color:var(--text-muted)}
+.facts{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+.fact{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;grid-template-columns:auto 1fr;gap:18px;align-items:center}
+.fact .big{font-family:var(--display);font-weight:800;font-size:58px;line-height:.9;color:var(--brass-deep);white-space:nowrap}
+.fact p{font-size:15.5px}
+.fact a{font-size:13px;color:var(--text-muted)}
+
+/* Assessment */
+.tool{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:48px;align-items:start}
+.tool .intro{position:sticky;top:96px}
+.progress{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.progress i{display:block;height:100%;width:0;background:var(--brass);transition:width .25s}
+.qs{display:grid;gap:26px}
+.dim{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;display:grid;gap:18px}
+.dim h3{font-size:21px;display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.dim h3 small{font:500 12px var(--mono);letter-spacing:.06em;color:var(--text-muted);text-transform:uppercase}
+fieldset.q{border:0;margin:0;padding:0;display:grid;gap:10px;min-width:0}
+fieldset.q legend{padding:0;font-weight:600;font-size:16.5px;line-height:1.4;margin-bottom:8px}
+.scale{display:grid;grid-template-columns:auto repeat(5,minmax(40px,1fr)) auto;gap:6px;align-items:center}
+.scale .end{font:500 11px var(--mono);text-transform:uppercase;letter-spacing:.04em;color:var(--text-muted);white-space:nowrap}
+.scale label{position:relative;cursor:pointer}
+.scale input{position:absolute;opacity:0;width:100%;height:100%;inset:0;margin:0;cursor:pointer}
+.scale span{display:grid;place-items:center;height:40px;border:1.5px solid var(--line);border-radius:8px;font:600 15px var(--body);color:var(--text-muted);background:var(--paper);transition:all .12s}
+.scale label:hover span{border-color:var(--brass)}
+.scale input:checked + span{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.scale input:focus-visible + span{outline:3px solid var(--brass);outline-offset:2px}
+.result{background:var(--ink);color:var(--on-ink);border-radius:var(--r);padding:28px;display:grid;gap:20px}
+.result .top{display:flex;flex-wrap:wrap;gap:20px;align-items:flex-end;justify-content:space-between}
+.result .score{font-family:var(--display);font-weight:800;font-size:96px;line-height:.8;color:var(--brass)}
+.result .score small{font-size:28px;color:var(--on-ink-muted)}
+.result .stage{font-family:var(--display);font-weight:800;text-transform:uppercase;font-size:36px;line-height:1}
+.bars{display:grid;gap:10px}
+.bar{display:grid;grid-template-columns:minmax(120px,190px) 1fr 44px;gap:12px;align-items:center;font-size:15px}
+.bar .track{height:10px;background:var(--ink-3);border-radius:99px;overflow:hidden}
+.bar .fill{height:100%;border-radius:99px;width:0;transition:width .4s}
+.bar output{font:500 14px var(--mono);text-align:right;font-variant-numeric:tabular-nums}
+.gaps{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.gap{border:1px solid var(--line-dark);border-radius:10px;padding:16px;display:grid;gap:8px;align-content:start}
+.gap h4{margin:0;font-family:var(--display);text-transform:uppercase;font-size:20px;color:var(--white)}
+.gap p{font-size:15px;color:var(--on-ink-muted)}
+.gap p b{color:var(--on-ink)}
+.waiting{border:1.5px dashed var(--line);border-radius:var(--r);padding:24px;color:var(--text-muted);background:var(--white)}
+
+/* Calculator */
+.calc{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:0;border-radius:var(--r);overflow:hidden;border:1px solid var(--line);background:var(--white)}
+.calc .inputs{padding:26px;display:grid;gap:16px;align-content:start}
+.field{display:grid;gap:6px}
+.field label{font-weight:600;font-size:15.5px}
+.field .hint{font-size:13.5px;color:var(--text-muted)}
+.field .in{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);overflow:hidden}
+.field .in:focus-within{border-color:var(--brass)}
+.field .in i{font:500 14px var(--mono);font-style:normal;color:var(--text-muted);padding:0 10px}
+.field input,.field select{flex:1;min-width:0;border:0;background:transparent;font:600 17px var(--body);padding:10px 10px;color:var(--text);font-variant-numeric:tabular-nums}
+.field input:focus,.field select:focus{outline:none}
+.calc .out{background:var(--ink);color:var(--on-ink);padding:26px;display:grid;gap:14px;align-content:start}
+.line{display:grid;grid-template-columns:1fr auto;gap:4px 16px;padding-bottom:12px;border-bottom:1px solid var(--line-dark)}
+.line b{font-weight:600}
+.line output{font:600 22px var(--body);font-variant-numeric:tabular-nums;color:var(--white)}
+.line small{grid-column:1/-1;font-size:13px;color:var(--on-ink-muted)}
+.total{display:grid;gap:4px}
+.total .num{font-family:var(--display);font-weight:800;font-size:clamp(52px,7vw,78px);line-height:.9;color:var(--brass);font-variant-numeric:tabular-nums}
+.recover{background:var(--ink-2);border-radius:10px;padding:14px 16px;font-size:15.5px}
+.recover output{font-weight:700;color:var(--brass)}
+.example{display:inline-block;font:500 11.5px var(--mono);text-transform:uppercase;letter-spacing:.06em;background:var(--brass-soft);color:var(--brass-deep);padding:3px 8px;border-radius:4px}
+
+/* Segments */
+.tabs{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid var(--line);padding-bottom:12px}
+.tabs button{font:600 15.5px var(--body);padding:10px 16px;border-radius:999px;border:1.5px solid var(--line);background:var(--white);color:var(--text);cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--ink);border-color:var(--ink);color:var(--white)}
+.panel{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;padding-top:32px}
+.panel .col{display:grid;gap:16px;align-content:start}
+.panel ul{margin:0;padding-left:20px;display:grid;gap:8px}
+.panel li::marker{color:var(--brass-deep)}
+.panel .bl{background:var(--brass-soft);border-left:4px solid var(--brass);padding:14px 16px;border-radius:0 8px 8px 0;font-weight:600}
+.panel h4{margin:0;font:500 12.5px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:var(--text-muted)}
+
+/* MC */
+.mc .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.deliver{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1px;background:var(--line-dark);border:1px solid var(--line-dark);border-radius:var(--r);overflow:hidden}
+.deliver div{background:var(--ink);padding:18px;display:grid;gap:6px}
+.deliver b{font-family:var(--display);text-transform:uppercase;font-size:21px;line-height:1.05;color:var(--white)}
+.deliver span{font-size:14.5px;color:var(--on-ink-muted)}
+.formats{display:flex;flex-wrap:wrap;gap:8px}
+.formats .chip{color:var(--brass)}
+
+/* Reviews */
+.reviews{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.rev{background:var(--white);border:1px solid var(--line);border-radius:var(--r);padding:24px;display:grid;gap:14px;align-content:start}
+.rev .fig{font-family:var(--display);font-weight:800;font-size:44px;line-height:.9;color:var(--brass-deep)}
+.rev blockquote{margin:0;font-size:17px;line-height:1.5}
+.rev cite{font-style:normal;font-size:14.5px;color:var(--text-muted)}
+.rev cite b{display:block;color:var(--text);font-size:15.5px}
+
+/* Office hours */
+.oh .grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:56px;align-items:start}
+.agenda{display:grid;gap:0;border-top:1px solid var(--line-dark)}
+.agenda div{display:grid;grid-template-columns:90px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line-dark)}
+.agenda .t{font:500 13px var(--mono);color:var(--brass);padding-top:3px}
+form.reg{background:var(--white);color:var(--text);border-radius:var(--r);padding:26px;display:grid;gap:14px}
+form.reg .two{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+form.reg label{display:grid;gap:6px;font-weight:600;font-size:15px}
+form.reg input,form.reg select,form.reg textarea{font:500 16px var(--body);padding:11px 12px;border:1.5px solid var(--line);border-radius:8px;background:var(--paper);color:var(--text);width:100%}
+form.reg textarea{min-height:84px;resize:vertical}
+form.reg .note{font-size:14px;padding:12px;border-radius:8px;background:var(--brass-soft);color:var(--brass-deep)}
+.host{display:grid;grid-template-columns:auto 1fr;gap:16px;align-items:center;padding-top:8px}
+.host .avatar{width:64px;height:64px;border-radius:50%;background:var(--ink-3);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:24px;color:var(--brass)}
+.host p{font-size:15px}
+
+footer{background:var(--ink);color:var(--on-ink-muted);font-size:14px}
+footer .wrap{padding-block:36px 48px;display:grid;gap:12px}
+footer a{color:var(--on-ink-muted)}
+
+@media (max-width:900px){
+  .hero .wrap,.tool,.calc,.panel,.mc .grid,.oh .grid{grid-template-columns:minmax(0,1fr)}
+  .tool .intro{position:static}
+  .problem .grid,.reviews{grid-template-columns:minmax(0,1fr)}
+  .ways{grid-template-columns:minmax(0,1fr)}
+  .facts,.gaps{grid-template-columns:minmax(0,1fr)}
+  .band{padding-block:64px}
+}
+@media (max-width:560px){
+  nav.links{display:none}
+  .scale{grid-template-columns:repeat(5,minmax(0,1fr))}
+  .scale .end{display:none}
+  .deliver{grid-template-columns:minmax(0,1fr)}
+  form.reg .two{grid-template-columns:minmax(0,1fr)}
+  .fact{grid-template-columns:minmax(0,1fr)}
+  .bar{grid-template-columns:minmax(0,1fr) 44px}
+  .bar .track{grid-column:1/-1;grid-row:2}
+}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body>
+<div class="review" role="note">
+  <div class="wrap">
+    <span><b>Concept draft for review.</b> Prepared by Evan Hopkins (TACANNI) for Mark Grainger. Not the live site.</span>
+    <details>
+      <summary>Reviewer notes (10)</summary>
+      <div class="notes"><div class="wrap">
+        <b>What to react to</b>
+        <ol>
+          <li><b>Focus: Badass On Demand, Fri Nov 20.</b> Every main button points at it. Free Office Hours on Tue Nov 17 is the warm-up that feeds it. The Office Hours schedule is a placeholder (every other Tuesday, 12:00–1:00 pm CT); confirm the day, time and seat cap.</li>
+          <li><b>After Nov 20</b> the site falls back on its own to Office Hours as the only date, so nothing goes stale.</li>
+          <li><b>Reviews are excerpts from bigimpacthq.com.</b> badassondemand.com couldn't be loaded. They're about speaking and business revenue, mostly from women speakers. Get 3 testimonials from senior leaders or owners before launch, ideally a franchisor, a family office and a founder.</li>
+          <li><b>The name.</b> "Badass" plays well with founders and may slow down family offices and franchisors. The plain subtitle carries the promise; consider a quieter name on B2B one-sheets.</li>
+          <li><b>Assessment and calculator work.</b> The 15 statements, scoring bands and "first move" advice are drafts for Mark to edit.</li>
+          <li><b>Calculator figures</b> use Gallup's replacement-cost range (0.5–2× salary). Everything else is the visitor's own input.</li>
+          <li><b>Forms don't submit.</b> On the live site they'd go to Kartra, tagged by audience, with "Who invited you?" for referral tracking.</li>
+          <li><b>Nov 20 details are placeholders.</b> Time, location, price and seat cap show as TBC. The Office Hours bonus (first pick of the live hot seats) is proposed and needs Mark's OK.</li>
+          <li><b>Mark's bio lines</b> are taken from bigimpacthq.com. "Rooms of 200+" comes from Mark's message about the Big Impact Event. Confirm both.</li>
+          <li><b>Still needed:</b> a headshot, the host reel link, a booking link for B2B briefings, the Zoom details, and links to this event page from bigimpacthq.com and Mark's LinkedIn (this page already links back).</li>
+        </ol>
+      </div></div>
+    </details>
+  </div>
+</div>
+
+<header class="top">
+  <div class="wrap">
+    <a class="mark" href="#top">Badass <span>On Demand</span></a>
+    <nav class="links" aria-label="Main">
+      <a href="#event" data-event>Nov 20</a>
+      <a href="#assessment">Assessment</a>
+      <a href="#calculator">Calculator</a>
+      <a href="#who">Who it's for</a>
+      <a href="#mc">MC &amp; Host</a>
+      <a href="#results">Results</a>
+    </nav>
+    <a class="btn" href="#event" data-after-text="Save my seat" data-after-href="#office-hours">Claim my seat · Nov 20</a>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<section class="band dark hero">
+  <div class="wrap">
+    <div class="stack">
+      <span class="eyebrow"><span data-event>Live event · Fri, Nov 20 · </span>For senior leaders, owners and founders</span>
+      <h1>Grows as fast as <em>you lead</em>.</h1>
+      <p class="lede" style="color:var(--on-ink-muted)">The result shows up in margin, retention and growth.</p>
+      <div class="btns">
+        <a class="btn" href="#event" data-after-text="Save my free seat" data-after-href="#office-hours">Claim my seat for Nov 20</a>
+        <a class="btn ghost" href="#office-hours" data-warmup>Try free Office Hours first</a>
+        <a class="btn ghost" href="#assessment" data-generic hidden>Score yourself first</a>
+      </div>
+    </div>
+    <aside class="oh-card" aria-labelledby="ev-card-title" data-event>
+      <span class="eyebrow" id="ev-card-title">Badass On Demand · Live · It's go time</span>
+      <div class="when">Fri, Nov 20</div>
+      <div class="time">Time and format <span class="tbc">TBC</span></div>
+      <p class="card-lede">You're in if you're:</p>
+      <ul>
+        <li>The reason it grew, and now the reason it's stuck.</li>
+        <li>Done waiting to feel ready.</li>
+        <li>Willing to say the real problem out loud.</li>
+      </ul>
+      <p class="card-foot">Seats capped · Investment <span class="tbc">TBC</span></p>
+      <a class="btn" href="#event">Claim my seat</a>
+      <a class="warmup" href="#office-hours" data-warmup>Not sure yet? Free Office Hours, <span data-next="date-inline">Tue, Nov 17</span></a>
+    </aside>
+    <aside class="oh-card" aria-labelledby="oh-card-title" data-after hidden>
+      <span class="eyebrow" id="oh-card-title">Open Office Hours · It's go time</span>
+      <div class="when" data-next="date">Every other Tuesday</div>
+      <div class="time" data-next="time">12:00–1:00 pm CT · Live on Zoom</div>
+      <p class="card-lede">You're in if you're:</p>
+      <ul>
+        <li>The reason it grew, and now the reason it's stuck.</li>
+        <li>Done waiting to feel ready.</li>
+        <li>Willing to say the real problem out loud.</li>
+      </ul>
+      <p class="card-foot">Free · 60 minutes · 20 seats</p>
+      <a class="btn" href="#office-hours">Save my seat</a>
+    </aside>
+  </div>
+  <div class="wrap">
+    <nav class="ways" aria-label="Three ways in">
+      <a href="#assessment"><span class="n">4 MINUTES</span><b>Score your leadership</b><small>Find the gap capping your growth.</small></a>
+      <a href="#calculator"><span class="n">2 MINUTES</span><b>Price the drag</b><small>See what it costs you a year.</small></a>
+      <a href="#event" data-event><span class="n">FRI, NOV 20 · LIVE</span><b>Badass On Demand</b><small>It's go time. Claim your seat.</small></a>
+      <a href="#office-hours" data-after hidden><span class="n" data-next="short">NEXT SESSION</span><b>Save your seat</b><small>Free. Live. 20 leaders.</small></a>
+    </nav>
+  </div>
+</section>
+
+<!-- PROBLEM -->
+<section class="band light problem">
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">The ceiling</span>
+      <h2>You built it by being everywhere.<br>You scale it by not having to be.</h2>
+    </div>
+    <div class="grid">
+      <div class="item"><h3>Every decision runs through you</h3><p>Your calendar is the company's speed limit.</p><p class="cost">Cost: stalled deals, slow hires, your best hours on other people's work.</p></div>
+      <div class="item"><h3>Your best people wait instead of own</h3><p>They bring questions, not answers. Then they leave.</p><p class="cost">Cost: half to twice their salary to replace each one.</p></div>
+      <div class="item"><h3>The story lives only in your head</h3><p>Your team can't repeat where you're going or why.</p><p class="cost">Cost: people comply instead of commit, and every change drags.</p></div>
+    </div>
+    <div class="facts">
+      <div class="fact"><span class="big">0.5–2×</span><div><p>What it costs to replace one employee, in annual salary.</p><a href="https://www.gallup.com/workplace/247391/fixable-problem-costs-businesses-trillion.aspx">Gallup</a></div></div>
+      <div class="fact"><span class="big">23%</span><div><p>Median profit gap between the most and least engaged teams, across 183,806 business units.</p><a href="https://www.gallup.com/workplace/321725/gallup-q12-meta-analysis-report.aspx">Gallup Q12 meta-analysis, 2024</a></div></div>
+    </div>
+    <div class="btns"><a class="btn" href="#assessment">Find your gap in 4 minutes</a></div>
+  </div>
+</section>
+
+<!-- ASSESSMENT -->
+<section class="band white" id="assessment">
+  <div class="wrap tool">
+    <div class="intro stack">
+      <span class="eyebrow">Leadership Scale Assessment</span>
+      <h2>What's capping your growth?</h2>
+      <p>15 statements. 4 minutes. Answer for how it is, not how you want it to be.</p>
+      <div class="stack" style="gap:8px">
+        <div class="progress" aria-hidden="true"><i id="prog"></i></div>
+        <span class="muted" id="prog-label" style="font-size:14px">0 of 15 answered</span>
+      </div>
+      <p class="muted" style="font-size:14px">1 = rarely true · 5 = almost always true</p>
+    </div>
+    <div class="stack-lg">
+      <form class="qs" id="quiz" onsubmit="return false"></form>
+      <div id="result-slot">
+        <div class="waiting" id="waiting">Answer all 15 to see your score, your stage and the two gaps costing you most.</div>
+        <div class="result" id="result" hidden>
+          <div class="top">
+            <div><span class="eyebrow">Your leadership scale score</span><div class="score"><span id="r-score">0</span><small>/100</small></div></div>
+            <div style="max-width:42ch"><div class="stage" id="r-stage">—</div><p id="r-stage-text" style="color:var(--on-ink-muted)"></p></div>
+          </div>
+          <div class="bars" id="r-bars"></div>
+          <div class="gaps" id="r-gaps"></div>
+          <div class="btns">
+            <a class="btn" href="#event" id="r-cta">Claim my seat for Nov 20</a>
+            <a class="btn ghost" href="#calculator">Price it in dollars</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CALCULATOR -->
+<section class="band light" id="calculator">
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Leadership Drag Calculator</span>
+      <h2>What is leadership drag costing you a year?</h2>
+      <p>Three line items your P&amp;L doesn't show. <span class="example">Example numbers</span> Swap in yours.</p>
+    </div>
+    <div class="calc">
+      <form class="inputs" id="calc" onsubmit="return false">
+        <div class="field"><label for="c-rev">Annual revenue</label><div class="in"><i>$</i><input id="c-rev" type="number" min="0" step="100000" value="8000000" inputmode="numeric"></div></div>
+        <div class="field"><label for="c-emp">Employees</label><div class="in"><input id="c-emp" type="number" min="0" value="45" inputmode="numeric"><i>people</i></div></div>
+        <div class="field"><label for="c-sal">Average salary</label><div class="in"><i>$</i><input id="c-sal" type="number" min="0" step="1000" value="70000" inputmode="numeric"></div></div>
+        <div class="field"><label for="c-turn">Annual turnover</label><div class="in"><input id="c-turn" type="number" min="0" max="100" value="18" inputmode="decimal"><i>%</i></div></div>
+        <div class="field"><label for="c-repl">Cost to replace one person</label><div class="in"><select id="c-repl"><option value="0.5" selected>0.5× salary (Gallup low end)</option><option value="1">1× salary</option><option value="1.5">1.5× salary</option><option value="2">2× salary (Gallup high end)</option></select></div></div>
+        <div class="field"><label for="c-hrs">Hours a week on work your team should own</label><div class="in"><input id="c-hrs" type="number" min="0" max="80" value="15" inputmode="numeric"><i>hrs/wk</i></div></div>
+        <div class="field"><label for="c-val">Your hourly value</label><div class="in"><i>$</i><input id="c-val" type="number" min="0" step="25" value="400" inputmode="numeric"></div><span class="hint">What an hour on deals, partners and key hires is worth.</span></div>
+        <div class="field"><label for="c-drag">Team time lost to rework and waiting on decisions</label><div class="in"><input id="c-drag" type="number" min="0" max="50" step="0.5" value="5" inputmode="decimal"><i>% of payroll</i></div></div>
+      </form>
+      <div class="out" aria-live="polite">
+        <div class="line"><b>Turnover</b><output id="o-turn">$0</output><small>Employees × turnover × salary × replacement multiple</small></div>
+        <div class="line"><b>Your time</b><output id="o-time">$0</output><small>Hours a week × 48 weeks × your hourly value</small></div>
+        <div class="line"><b>Team drag</b><output id="o-drag">$0</output><small>Employees × salary × % lost</small></div>
+        <div class="total"><span class="eyebrow">Estimated annual leadership drag</span><span class="num" id="o-total">$0</span><span style="color:var(--on-ink-muted)" id="o-pct">0% of revenue</span></div>
+        <div class="recover">Win back a quarter of it: <output id="o-rec">$0</output> a year.</div>
+        <a class="btn" href="#event" style="justify-content:center" data-after-text="Save my seat and bring this number" data-after-href="#office-hours">Bring this number to Nov 20</a>
+      </div>
+    </div>
+    <p class="muted" style="font-size:14px">An estimate from your inputs, not a guarantee. Replacement-cost range: <a href="https://www.gallup.com/workplace/247391/fixable-problem-costs-businesses-trillion.aspx">Gallup</a>.</p>
+  </div>
+</section>
+
+<!-- WHO -->
+<section class="band white" id="who">
+  <div class="wrap stack">
+    <span class="eyebrow">Who it's for</span>
+    <h2>For the people who lead leaders</h2>
+    <div class="tabs" role="tablist" aria-label="Audiences">
+      <button role="tab" id="t-owners" aria-controls="p-owners" aria-selected="true" data-hash="owners">Owners &amp; founders</button>
+      <button role="tab" id="t-franchising" aria-controls="p-franchising" aria-selected="false" data-hash="franchising">Franchise systems</button>
+      <button role="tab" id="t-family-offices" aria-controls="p-family-offices" aria-selected="false" data-hash="family-offices">Family offices</button>
+      <button role="tab" id="t-incubators" aria-controls="p-incubators" aria-selected="false" data-hash="incubators">Incubators &amp; accelerators</button>
+      <button role="tab" id="t-conferences" aria-controls="p-conferences" aria-selected="false" data-hash="conferences">Conference companies</button>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-owners" aria-labelledby="t-owners">
+      <div class="col"><h3>You're the ceiling. Raise it.</h3><p>You built something real. The next stage needs a different version of you: fewer answers, better questions, presence that holds when the stakes rise.</p><div class="bl">Bottom line: more of your week on growth, and a team that hits the number without you in the room.</div></div>
+      <div class="col"><h4>Where to start</h4><ul><li>Score your leadership. 4 minutes.</li><li>Price the drag. 2 minutes.</li><li>Bring both into the room and work them live.</li></ul><div class="btns"><a class="btn" href="#event" data-after-text="Save my seat" data-after-href="#office-hours">Claim my seat · Nov 20</a><a class="btn ghost" href="#office-hours" data-warmup>Try Office Hours first</a></div></div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-franchising" aria-labelledby="t-franchising" hidden>
+      <div class="col"><h3>Your brand is only as strong as the owner in the building.</h3><p>Franchisees are operators first, leaders second. When an owner can't hire, hold people accountable or run a weekly rhythm, it shows in unit numbers, turnover and validation calls.</p><div class="bl">Bottom line: stronger owners, steadier units, better validation calls.</div></div>
+      <div class="col"><h4>What we bring to your system</h4><ul><li>Assess every franchisee and spot at-risk units before the numbers do.</li><li>A Badass On Demand session at your convention or regional meetings.</li><li>A leadership track for multi-unit operators.</li><li>Office Hours seats for franchisees between field visits.</li></ul><div class="btns"><a class="btn" href="#event" data-after-text="See it live at Office Hours" data-after-href="#office-hours">See it live on Nov 20</a><a class="btn ghost" href="#contact">Request a briefing</a></div></div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-family-offices" aria-labelledby="t-family-offices" hidden>
+      <div class="col"><h3>Protect the capital. Invest in the people who run it.</h3><p>Returns depend on portfolio CEOs and on the next generation stepping into board seats. Leadership risk rarely shows in a quarterly report until it's expensive.</p><div class="bl">Bottom line: leadership risk visible early, successors ready before they're needed.</div></div>
+      <div class="col"><h4>What we bring to your office</h4><ul><li>Confidential diagnostics for portfolio leaders.</li><li>Presence and influence work for next-generation family members.</li><li>Hosting for family assemblies and portfolio CEO gatherings.</li><li>Private and discreet. No public cohorts.</li></ul><div class="btns"><a class="btn" href="#event" data-after-text="See it live at Office Hours" data-after-href="#office-hours">See it live on Nov 20</a><a class="btn ghost" href="#contact">Request a private briefing</a></div></div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-incubators" aria-labelledby="t-incubators" hidden>
+      <div class="col"><h3>Your founders can build. Can they lead?</h3><p>Founders learn to pitch and ship. Few learn to hand off and hire their first leaders. The gap hits right after the raise, when the team doubles.</p><div class="bl">Bottom line: founders who raise, hire well and keep their first leaders, plus a result for your program report.</div></div>
+      <div class="col"><h4>What we bring to your cohort</h4><ul><li>A cohort workshop: demo-day presence and the first-leader handoff.</li><li>The assessment at intake and graduation, so you can show the change.</li><li>Office Hours for alumni.</li><li>Founder hot seats with your mentors in the room.</li></ul><div class="btns"><a class="btn" href="#event" data-after-text="See it live at Office Hours" data-after-href="#office-hours">See it live on Nov 20</a><a class="btn ghost" href="#contact">Request a briefing</a></div></div>
+    </div>
+
+    <div class="panel" role="tabpanel" id="p-conferences" aria-labelledby="t-conferences" hidden>
+      <div class="col"><h3>Your attendees paid for a great room. Give them one.</h3><p>The event people rebook is the one with the right voice on the mic between sessions.</p><div class="bl">Bottom line: an on-time agenda, sponsors who get seen, attendees who come back.</div></div>
+      <div class="col"><h4>What we bring to your event</h4><ul><li>MC and host, one to three days.</li><li>An opening keynote or leadership workshop.</li><li>The assessment as a live audience moment, results on screen.</li><li>Panels where every voice lands.</li></ul><div class="btns"><a class="btn" href="#mc">See MC &amp; host</a><a class="btn ghost" href="#contact">Check your date</a></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- MC -->
+<section class="band dark2 mc" id="mc">
+  <div class="wrap grid">
+    <div class="stack">
+      <span class="eyebrow">Event MC &amp; Host</span>
+      <h2>Your agenda on time. Your speakers set up to win. Your room still full after lunch.</h2>
+      <p class="muted">For conferences, associations, franchise conventions and private gatherings.</p>
+      <div class="formats"><span class="chip">MC &amp; host · 1–3 days</span><span class="chip">Panel moderation</span><span class="chip">Opening keynote</span><span class="chip">Leadership workshop</span></div>
+      <p class="muted" style="font-size:15px">Hosted rooms of 200+ at Big Impact events. Shared stages with Jack Canfield, Robert &amp; Kim Kiyosaki and Les Brown.</p>
+      <div class="btns"><a class="btn" href="#contact">Check your event date</a><a class="btn ghost" href="#mc" aria-disabled="true" title="Reel link needed">Watch the host reel</a></div>
+    </div>
+    <div class="deliver">
+      <div><b>Run of show, held to the minute</b><span>Late speakers absorbed, not passed to the closer.</span></div>
+      <div><b>Intros that make the room lean in</b><span>Every speaker walks on to a room that wants them.</span></div>
+      <div><b>Sponsors woven in, not read off a card</b><span>Mentions that land. Sponsors renew.</span></div>
+      <div><b>Energy through the post-lunch dip</b><span>People stay in their seats, not the hallway.</span></div>
+      <div><b>Panels where every voice lands</b><span>Sharp questions. No monologues. On time.</span></div>
+      <div><b>Calm when the mic dies</b><span>The tech fails. The room doesn't.</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="band light" id="results">
+  <div class="wrap stack-lg">
+    <div class="stack">
+      <span class="eyebrow">Results</span>
+      <h2>Results, in their words</h2>
+    </div>
+    <div class="reviews">
+      <figure class="rev" style="margin:0"><span class="fig">$5.1M</span><blockquote>"Since working with Mark &amp; Shannon, we've generated over $5.1 Million Dollars!"</blockquote><cite><b>Jim &amp; Cyndi Padilla</b>Sales Expert, Gain the Edge</cite></figure>
+      <figure class="rev" style="margin:0"><span class="fig">$600K → $1.6M</span><blockquote>"Mark &amp; Shannon helped me grow my business from $600K to $1.6M in just 2 years!"</blockquote><cite><b>Penelope Jane Smith</b>Executive Director, Real Prosperity Inc.</cite></figure>
+      <figure class="rev" style="margin:0"><span class="fig">$2.25M</span><blockquote>"They've helped me generate over $2.25M, be more profitable and scale ready!"</blockquote><cite><b>Rachael Jayne Groover</b>Founder and CEO, The Awakened School®</cite></figure>
+      <figure class="rev" style="margin:0"><span class="fig">$5M+</span><blockquote>"Before BigImpactHQ, I was speaking all over the world but didn't have the system to consistently monetize my message."</blockquote><cite><b>Miss Jaiya</b>Founder, Speaker &amp; Author</cite></figure>
+      <figure class="rev" style="margin:0"><span class="fig">$180K</span><blockquote>"Mark &amp; Shannon helped me refine my Signature Talk – which resulted in over $180,000 the first time I gave it!"</blockquote><cite><b>Fran Bishop</b>Founder, Aerobodies Inc.</cite></figure>
+      <figure class="rev" style="margin:0"><span class="fig">Next level</span><blockquote>"Not only did they help me up-level my offer conversion, they also held certainty in my growth and next level leader."</blockquote><cite><b>Jolie Dawn</b>Founder, Speaker &amp; Author, Creatrix Academy</cite></figure>
+    </div>
+    <div class="btns"><a class="btn" href="#event" data-after-text="Save my seat" data-after-href="#office-hours">Claim my seat · Nov 20</a></div>
+    <p class="muted" style="font-size:14px">Excerpts from client reviews on <a href="https://bigimpacthq.com/">bigimpacthq.com</a>. Results are individual and not typical or guaranteed.</p>
+  </div>
+</section>
+
+<!-- EVENT: BADASS ON DEMAND, NOV 20 -->
+<section class="band dark oh" id="event" data-event>
+  <div class="wrap grid">
+    <div class="stack">
+      <span class="eyebrow">Badass On Demand · Live · Fri, Nov 20</span>
+      <h2>You're changing the world. It's go time.</h2>
+      <p class="lede" style="color:var(--on-ink-muted)">For leaders whose growth now depends on how they lead. Become the leader the moment needs, on demand.</p>
+      <div class="qualify">
+        <h3>You belong in this room if you're:</h3>
+        <ul>
+          <li>Building something that matters, and it has to scale.</li>
+          <li>Carrying a payroll, and you take it personally.</li>
+          <li>The reason it grew, and honest enough to admit you're why it's stuck.</li>
+          <li>Done waiting to feel ready for the board, the raise or the stage.</li>
+          <li>Willing to say the real problem out loud.</li>
+          <li>Ready to make one hard move by next week.</li>
+        </ul>
+        <p class="sting">Read that looking for reasons it isn't you? That's your answer. This room is for the ones who said yes.</p>
+      </div>
+      <div class="agenda" aria-label="Event details">
+        <div><span class="t">WHEN</span><span>Fri, Nov 20 · time <span class="tbc">TBC</span></span></div>
+        <div><span class="t">WHERE</span><span><span class="tbc">TBC</span></span></div>
+        <div><span class="t">INVEST</span><span><span class="tbc">TBC</span></span></div>
+        <div><span class="t">SEATS</span><span>Capped at <span class="tbc">TBC</span></span></div>
+      </div>
+      <div class="host"><div class="avatar" aria-hidden="true">MG</div><p><b>Led by Mark A. Grainger.</b> 25+ years in leadership and influence. Former Senior Branding Strategist at Clear Channel. Has worked with Porsche, Harley-Davidson, AFLAC and Marriott.</p></div>
+    </div>
+    <form class="reg" id="ev-reg" novalidate>
+      <h3 style="color:var(--ink)">Claim your seat</h3>
+      <p class="muted" style="font-size:15px">Badass On Demand · Fri, Nov 20</p>
+      <div class="two">
+        <label for="e-name">Name<input id="e-name" name="name" autocomplete="name" required></label>
+        <label for="e-email">Work email<input id="e-email" name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <label for="e-role">I lead…<select id="e-role" name="role"><option>My own company</option><option>As a senior executive</option><option>A franchise system or franchise unit</option><option>A family office or portfolio company</option><option>An incubator or accelerator</option><option>Conferences and events</option></select></label>
+      <label for="e-ref">Who invited you?<input id="e-ref" name="referrer" placeholder="Name, if someone sent you"></label>
+      <button class="btn" type="submit" style="justify-content:center">Claim my seat for Nov 20</button>
+      <p class="note" id="ev-note" hidden>This is a concept draft, so nothing was sent. On the live site this goes to Kartra checkout.</p>
+      <p class="muted" style="font-size:14px" data-warmup>Not ready? <a href="#office-hours">Start at free Office Hours on <span data-next="date-inline">Tue, Nov 17</span></a>.</p>
+    </form>
+  </div>
+</section>
+
+<!-- OFFICE HOURS -->
+<section class="band dark2 oh" id="office-hours">
+  <div class="wrap grid">
+    <div class="stack">
+      <span class="eyebrow" data-next="eyebrow">Open Office Hours · free · every other Tuesday</span>
+      <h2><span data-warmup>Not ready to commit? Start here.</span><span data-generic hidden>You're changing the world. It's go time.</span></h2>
+      <p class="lede" style="color:var(--on-ink-muted)"><span data-warmup>A free warm-up three days before Nov 20. 60 minutes, live on Zoom, 20 leaders. Bring one real challenge, work it live, then decide.</span><span data-generic hidden>60 minutes. Live on Zoom. 20 leaders done playing small. Bring one real challenge and leave with your next move.</span></p>
+      <p class="bonus" data-warmup>Office Hours bonus: first pick of the live hot seats on Nov 20.</p>
+      <div class="agenda" aria-label="How the hour runs">
+        <div><span class="t">0:00–0:10</span><span>One move for the week, and what it's worth on the P&amp;L.</span></div>
+        <div><span class="t">0:10–0:50</span><span>Hot seats: 3–4 leaders bring a real situation and leave with a plan.</span></div>
+        <div><span class="t">0:50–1:00</span><span>Everyone commits to one move and a date.</span></div>
+      </div>
+    </div>
+    <form class="reg" id="reg" novalidate>
+      <h3 style="color:var(--ink)">Save your Office Hours seat</h3>
+      <p class="muted" data-next="formline" style="font-size:15px">Every other Tuesday · 12:00 CT · Zoom · free</p>
+      <div class="two">
+        <label for="f-name">Name<input id="f-name" name="name" autocomplete="name" required></label>
+        <label for="f-email">Work email<input id="f-email" name="email" type="email" autocomplete="email" required></label>
+      </div>
+      <label for="f-role">I lead…<select id="f-role" name="role"><option>My own company</option><option>As a senior executive</option><option>A franchise system or franchise unit</option><option>A family office or portfolio company</option><option>An incubator or accelerator</option><option>Conferences and events</option></select></label>
+      <label for="f-q">Your challenge (optional)<textarea id="f-q" name="challenge" placeholder="One sentence is enough."></textarea></label>
+      <label for="f-ref">Who invited you?<input id="f-ref" name="referrer" placeholder="Name, if someone sent you"></label>
+      <button class="btn" type="submit" style="justify-content:center">Save my seat · free</button>
+      <p class="note" id="reg-note" hidden>This is a concept draft, so nothing was sent. On the live site this registers you in Kartra and sends the Zoom link.</p>
+    </form>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="band white" id="contact">
+  <div class="wrap stack">
+    <span class="eyebrow">For franchise systems, family offices, incubators and event producers</span>
+    <h2>Bring it to your people</h2>
+    <p>30 minutes to see what fits: a system-wide assessment, a cohort session, a private engagement or an MC booking.</p>
+    <div class="btns"><a class="btn" href="#contact" aria-disabled="true" title="Booking link needed">Book a briefing</a><a class="btn ghost" href="#office-hours">Or start at Office Hours</a></div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="mark" style="color:var(--on-ink)">Badass <span>On Demand</span></div>
+    <p>A live event from <a href="https://bigimpacthq.com/">Big Impact HQ</a>. More from Mark: <a href="https://bigimpacthq.com/">bigimpacthq.com</a> · <a href="https://www.linkedin.com/in/markagrainger">LinkedIn</a></p>
+    <p>Statistics: <a href="https://www.gallup.com/workplace/247391/fixable-problem-costs-businesses-trillion.aspx">Gallup, replacement cost</a> · <a href="https://www.gallup.com/workplace/321725/gallup-q12-meta-analysis-report.aspx">Gallup Q12 meta-analysis, 11th ed., 2024</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  /* ---------- Next Open Office Hours: the one date on the site ---------- */
+  var ANCHOR = {y:2026, m:10, d:17}; // Tue Nov 17, 2026 (month 0-based)
+  var HOUR = 12, LEN_MIN = 60, TZ = 'America/Chicago';
+  function chicagoHour(dt){ return parseInt(new Intl.DateTimeFormat('en-US',{timeZone:TZ,hour:'numeric',hour12:false}).format(dt),10) % 24; }
+  function sessionStart(y,m,d){
+    var guess = new Date(Date.UTC(y,m,d,HOUR+6,0)); // CST = UTC-6
+    if (chicagoHour(guess) !== HOUR) guess = new Date(Date.UTC(y,m,d,HOUR+5,0)); // CDT = UTC-5
+    return guess;
+  }
+  function nextSession(){
+    var now = Date.now();
+    var base = Date.UTC(ANCHOR.y, ANCHOR.m, ANCHOR.d);
+    for (var k=0;k<200;k++){
+      var dd = new Date(base + k*14*86400000);
+      var s = sessionStart(dd.getUTCFullYear(), dd.getUTCMonth(), dd.getUTCDate());
+      if (s.getTime() + LEN_MIN*60000 > now) return s;
+    }
+    return null;
+  }
+  var EVENT_START = Date.UTC(2026, 10, 20, 6, 0), EVENT_END = Date.UTC(2026, 10, 21, 6, 0); // Fri Nov 20, 2026, all day CT
+  try{
+    var now = Date.now(), s = nextSession();
+    var eventOn = now < EVENT_END;
+    var warmup = eventOn && !!s && s.getTime() < EVENT_START;
+    var show = function(sel, on){ document.querySelectorAll(sel).forEach(function(el){ el.hidden = !on; }); };
+    show('[data-event]', eventOn); show('[data-after]', !eventOn);
+    show('[data-warmup]', warmup); show('[data-generic]', !warmup);
+    if (!eventOn) document.querySelectorAll('[data-after-text]').forEach(function(el){ el.textContent = el.getAttribute('data-after-text'); el.setAttribute('href', el.getAttribute('data-after-href') || '#office-hours'); });
+    if (s){
+      document.querySelectorAll('[data-next="date-inline"]').forEach(function(el){ el.textContent = new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric'}).format(s); });
+      var long = new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric'}).format(s);
+      var short = new Intl.DateTimeFormat('en-US',{timeZone:TZ,weekday:'short',month:'short',day:'numeric'}).format(s).toUpperCase();
+      document.querySelectorAll('[data-next="date"]').forEach(function(el){ el.textContent = long; });
+      document.querySelectorAll('[data-next="time"]').forEach(function(el){ el.textContent = '12:00–1:00 pm CT · Live on Zoom'; });
+      document.querySelectorAll('[data-next="short"]').forEach(function(el){ el.textContent = 'NEXT: ' + short; });
+      document.querySelectorAll('[data-next="eyebrow"]').forEach(function(el){ el.textContent = 'Next session: ' + long + ' · 12:00–1:00 pm CT · free'; });
+      document.querySelectorAll('[data-next="formline"]').forEach(function(el){ el.textContent = long + ' · 12:00 CT · Zoom · free'; });
+      var rc = document.getElementById('r-cta'); if (rc && !eventOn){ rc.textContent = 'Save my seat · ' + long; rc.setAttribute('href', '#office-hours'); }
+    }
+  }catch(e){}
+
+  /* ---------- Assessment ---------- */
+  var DIMS = [
+    {k:'presence', name:'Presence on demand',
+     q:['In high-stakes rooms (board, investors, a major client), I perform at my best even when I don’t feel ready.',
+        'I can reset my energy and focus in minutes before an important conversation.',
+        'People leave my meetings clearer and more committed than when they walked in.'],
+     cost:'Deals, raises and key hires are won in a few high-stakes rooms. Uneven presence there costs you win rate.',
+     move:'Build a 5-minute pre-room routine. Rehearse your first 60 seconds for your next three big conversations.'},
+    {k:'story', name:'Story & influence',
+     q:['My team can explain where we’re going and why, in their own words, without me in the room.',
+        'I have a short story that makes customers, partners or investors lean in.',
+        'When I ask for a change, people commit to it instead of just complying.'],
+     cost:'If only you can tell the story, every sale, hire and change waits on you.',
+     move:'Write the two-minute version of where you’re going. Have three leaders tell it back this week.'},
+    {k:'decisions', name:'Decisions & clarity',
+     q:['Decisions get made at the right level without routing through me.',
+        'Our top three priorities this quarter are written down and everyone knows them.',
+        'I make hard calls on people, money and direction quickly instead of letting them drift.'],
+     cost:'Slow decisions cost hours of rework and push your priorities into next quarter.',
+     move:'Publish your top three priorities. Name the decisions your leaders now own.'},
+    {k:'ownership', name:'Team ownership',
+     q:['If I stepped away for two weeks, the business would still hit its numbers.',
+        'My leaders own outcomes, not just tasks.',
+        'I spend most of my week on work only I can do.'],
+     cost:'If the business needs you to hit its numbers, growth stops at your calendar and the company is harder to sell.',
+     move:'List last week’s work someone else should own. Hand off the top three with an outcome and a check-in date.'},
+    {k:'rhythm', name:'Growth rhythm',
+     q:['We review a small set of numbers every week and act on what they show.',
+        'People hold each other accountable without me stepping in.',
+        'I know the two or three levers that will drive our next stage of growth.'],
+     cost:'Without a weekly scorecard, problems surface late and growth runs on your energy.',
+     move:'Pick five numbers that predict next quarter. Review them with your leaders for 30 minutes every week.'}
+  ];
+  var STAGES = [
+    {min:80, name:'Scaler', text:'You lead leaders. Now stay sharp as the stakes rise.'},
+    {min:60, name:'Builder', text:'Your team carries real weight. The gaps left are costing you speed.'},
+    {min:40, name:'Operator', text:'Strong in the room, stretched outside it. The next stage needs leaders, not more of you.'},
+    {min:0, name:'Bottleneck', text:'Everything runs through you. Growth stops at your calendar.'}
+  ];
+  var quiz = document.getElementById('quiz'), n = 0;
+  DIMS.forEach(function(d, di){
+    var box = document.createElement('div'); box.className = 'dim';
+    box.innerHTML = '<h3>' + d.name + '<small>' + (di+1) + ' of 5</small></h3>';
+    d.q.forEach(function(text){
+      var id = 'q' + n, fs = document.createElement('fieldset'); fs.className = 'q';
+      var html = '<legend>' + text + '</legend><div class="scale"><span class="end">Rarely</span>';
+      for (var v=1; v<=5; v++){
+        html += '<label><input type="radio" name="' + id + '" id="' + id + '-' + v + '" value="' + v + '" data-dim="' + d.k + '"><span>' + v + '</span></label>';
+      }
+      fs.innerHTML = html + '<span class="end">Almost always</span></div>';
+      box.appendChild(fs); n++;
+    });
+    quiz.appendChild(box);
+  });
+  var TOTAL = n;
+  function color(p){ return p >= 70 ? 'var(--good)' : p >= 45 ? 'var(--mid)' : 'var(--low)'; }
+  function score(){
+    var answered = quiz.querySelectorAll('input:checked');
+    var c = answered.length;
+    document.getElementById('prog').style.width = (c/TOTAL*100) + '%';
+    document.getElementById('prog-label').textContent = c + ' of ' + TOTAL + ' answered';
+    if (c < TOTAL) { document.getElementById('result').hidden = true; document.getElementById('waiting').hidden = false; return; }
+    var sums = {}; answered.forEach(function(i){ sums[i.dataset.dim] = (sums[i.dataset.dim]||0) + (+i.value); });
+    var pcts = DIMS.map(function(d){ return {d:d, p: Math.round((sums[d.k]-3)/12*100)}; });
+    var overall = Math.round(pcts.reduce(function(a,x){return a+x.p;},0) / pcts.length);
+    var st = STAGES.filter(function(s){ return overall >= s.min; })[0];
+    document.getElementById('r-score').textContent = overall;
+    document.getElementById('r-stage').textContent = st.name;
+    document.getElementById('r-stage-text').textContent = st.text;
+    document.getElementById('r-bars').innerHTML = pcts.map(function(x){
+      return '<div class="bar"><span>' + x.d.name + '</span><div class="track"><div class="fill" style="width:' + x.p + '%;background:' + color(x.p) + '"></div></div><output>' + x.p + '</output></div>';
+    }).join('');
+    var low = pcts.slice().sort(function(a,b){ return a.p - b.p; }).slice(0,2);
+    document.getElementById('r-gaps').innerHTML = low.map(function(x){
+      return '<div class="gap"><h4>' + x.d.name + ' · ' + x.p + '</h4><p><b>What it’s costing:</b> ' + x.d.cost + '</p><p><b>First move:</b> ' + x.d.move + '</p></div>';
+    }).join('');
+    document.getElementById('waiting').hidden = true;
+    document.getElementById('result').hidden = false;
+  }
+  quiz.addEventListener('change', score);
+
+  /* ---------- Calculator ---------- */
+  var money = new Intl.NumberFormat('en-US',{style:'currency',currency:'USD',maximumFractionDigits:0});
+  function v(id){ var x = parseFloat(document.getElementById(id).value); return isFinite(x) && x > 0 ? x : 0; }
+  function calc(){
+    var emp = v('c-emp'), sal = v('c-sal');
+    var turn = emp * v('c-turn')/100 * sal * v('c-repl');
+    var time = v('c-hrs') * 48 * v('c-val');
+    var drag = emp * sal * v('c-drag')/100;
+    var total = turn + time + drag, rev = v('c-rev');
+    document.getElementById('o-turn').textContent = money.format(turn);
+    document.getElementById('o-time').textContent = money.format(time);
+    document.getElementById('o-drag').textContent = money.format(drag);
+    document.getElementById('o-total').textContent = money.format(total);
+    document.getElementById('o-pct').textContent = rev ? (total/rev*100).toFixed(1) + '% of annual revenue' : 'Add revenue to see the share';
+    document.getElementById('o-rec').textContent = money.format(total*0.25);
+  }
+  document.getElementById('calc').addEventListener('input', calc);
+  calc();
+
+  /* ---------- Audience tabs, deep-linkable by hash ---------- */
+  var tabs = Array.prototype.slice.call(document.querySelectorAll('[role="tab"]'));
+  function select(hash, scroll){
+    var t = tabs.filter(function(b){ return b.dataset.hash === hash; })[0];
+    if (!t) return false;
+    tabs.forEach(function(b){
+      var on = b === t; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1;
+      document.getElementById(b.getAttribute('aria-controls')).hidden = !on;
+    });
+    if (scroll) document.getElementById('who').scrollIntoView({behavior:'smooth', block:'start'});
+    return true;
+  }
+  tabs.forEach(function(b, i){
+    b.addEventListener('click', function(){ select(b.dataset.hash, false); try{ history.replaceState(null,'','#'+b.dataset.hash); }catch(e){} });
+    b.addEventListener('keydown', function(e){
+      var j = e.key === 'ArrowRight' ? i+1 : e.key === 'ArrowLeft' ? i-1 : null;
+      if (j === null) return; j = (j + tabs.length) % tabs.length; tabs[j].focus(); select(tabs[j].dataset.hash, false);
+    });
+  });
+  function fromHash(){ var h = (location.hash || '').slice(1); if (h) select(h, true); }
+  window.addEventListener('hashchange', fromHash); fromHash();
+
+  /* ---------- Draft forms ---------- */
+  document.getElementById('reg').addEventListener('submit', function(e){ e.preventDefault(); document.getElementById('reg-note').hidden = false; });
+  document.getElementById('ev-reg').addEventListener('submit', function(e){ e.preventDefault(); document.getElementById('ev-note').hidden = false; });
+  document.querySelectorAll('[aria-disabled="true"]').forEach(function(a){ a.addEventListener('click', function(e){ e.preventDefault(); }); });
+})();
+</script>
+</body>
+</html>

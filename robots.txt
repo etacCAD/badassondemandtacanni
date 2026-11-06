@@ -1,0 +1,3 @@
+# Concept draft for review. Keep out of search until launch.
+User-agent: *
+Disallow: /
